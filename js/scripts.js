@@ -12,6 +12,11 @@
 
 			htmlDom : $('html'),
 			careerBtn : $('button'),
+			careerContent : $('.career-content'),
+			careerModal : $('.career-modal'),
+			chStaff : $('.ch-staff'),
+			phStaff : $('.ph-staff'),
+			usStaff : $('.us-staff'),
 
 
 			/*-----------------------------------------------------
@@ -20,9 +25,11 @@
 
 			init : function() {
 				vimle.svg();
-				vimle.registrationForm();
+				vimle.careerModalFunc();
+				vimle.contactModalFunc();
+				vimle.staffFunc();
 			},
-
+			
 			/*-----------------------------------------------------
 			    Functions
 			-----------------------------------------------------*/
@@ -39,25 +46,70 @@
 				};
 			},
 
-			registrationForm : function() {
-				vimle.careerBtn.on('click', function(e){
-					e.preventDefault();
-					console.log(($(this).data('modal')));
+			careerModalFunc : function() {
+
+				$('[data-button="career"]').on('click', function() {
+					console.log('Career Opening Clicked!');
+
+					var current = $(this).data('career'),
+						careerCont = vimle.careerModal.find("[data-career-content='" + current + "']");
+
+					vimle.careerContent.hide();
+					careerCont.show();
+					vimle.careerModal.fadeIn(300);
+
 				});
 
+				$('[data-button="career-close"]').on('click', function() {
+					vimle.careerContent.hide();
+					vimle.careerModal.fadeOut(300);
+				});
 			},
 
-			modalHide : function() {
-				$(document).on('click', function(e){
-			        var container = $(".modal-contents");
 
-			        // if the target of the click isn't the container... nor a descendant of the container
-			        if (!container.is(e.target) && container.has(e.target).length === 0){
-			            $('.modal').fadeOut(300);
-			            vimle.siteBody.css('overflow-y','visible');
-			        };
-			    });
-			}
+
+			contactModalFunc : function() {
+
+				$('<a class="mClose" data-button="contact-close"></a>').appendTo('.wpcf7 form');
+
+				$('[data-button="contact-open"]').on('click', function() {
+					console.log('Contact Form Modal!');
+
+					$('.wpcf7').fadeIn(300);
+
+				});
+
+				$('[data-button="contact-close"]').on('click', function() {
+					$('.wpcf7').fadeOut(300);
+				});
+			},
+
+
+			staffFunc : function() {
+
+				vimle.chStaff.hide();
+				vimle.usStaff.hide();
+
+				$('[data-button="staff-select"]').on('click', function() {
+					var current = $(this).data('staff');
+
+					vimle.phStaff.hide();
+					vimle.chStaff.hide();
+					vimle.usStaff.hide();
+
+					if ( current=='ph') {
+						vimle.phStaff.fadeIn(300);
+
+					} else if ( current=='ch') {
+						vimle.chStaff.fadeIn(300);
+
+					} else if ( current=='us') {
+						vimle.usStaff.fadeIn(300);
+
+					};
+
+				});
+			},
 
 		};
 

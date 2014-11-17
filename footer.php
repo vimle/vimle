@@ -1,14 +1,30 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
-				<div class="wrap">
-					Main Footer
+				<div class="wrap footer-info clear">
+					<div class="column-6">
+						<img src="<?php echo bloginfo('template_url');?>/img/large-logo.png" alt="Vimle Logo">
+					</div>
+					<div class="column-6">
+						<h3>Give us a call</h3>
+						<p>We would love to hear from you.</p>
+						<div class="contact-details">
+							<span class="contact-phone"><i class="icon-phone"></i>+63 917 546 0727</span>
+							<span class="contact-mail"><i class="icon-envelope"></i>support@vimle.com</span>
+						</div>
+
+						<h3>We are social</h3>
+						<div class="social-icons">
+							<i class="icon-facebook"></i>
+							<i class="icon-twitter"></i>
+							<i class="icon-googleplus"></i>
+						</div>
+					</div>
 				</div>
 
 				<!-- copyright -->
 				<div class="copyright">
 					<div class="wrap">
-						<p>&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'tranx'); ?>
-						<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//tranx.com" title="HTML5 Blank">HTML5 Blank</a>.</p>
+						<p>Copyright &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 					</div>
 				</div>
 				<!-- /copyright -->
