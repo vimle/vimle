@@ -21,7 +21,7 @@
 				<div class="wrap">
 					<h1>Progressive Minds. Innovative Service.</h1>
 					<p>Vimle LLC is an online retail company founded in 2012. Our primary office is located in Arizona, USA. We have also established satellite offices in the Philippines and in China. Through the years, we have endeavored to forge a sterling reputation in online business. With over a hundred employees in multiple countries, together we work to deliver quality service to our valued customers in the United States, United Kingdom, and various other countries.</p>
-					<a class="button" href="#about">Learn More</a>
+					<a data-button="learn-more" class="button">Learn More</a>
 				</div>
 			</section>
 			<!-- /home-intro -->
@@ -50,6 +50,7 @@
 								<a data-button="career-close" class="mClose"></a>
 								<h3><?php the_sub_field('job_title'); ?></h3>
 								<p><?php the_sub_field('job_description'); ?></p>
+								<div class="note">You can email your résumé to : <b>careers@vimle.com</b></div>
 							</div>
 
 						<?php endwhile; ?>
@@ -71,7 +72,7 @@
 
 
 			<!-- /home-employees -->
-			<section class="home-staff">
+			<section class="home-staff" id="staff">
 				<div class="wrap">
 					<h1>Awesome People Behind</h1>
 					<h2>Vimle Universal Solutions - Philippines</h2>
@@ -81,77 +82,104 @@
 
 						<!-- vimle president -->
 						<div class="vpres">
-							<div class="staff-img" style="background-image: url(<?php echo bloginfo('template_url');?>/img/daniel.png);">
+							<div class="staff-img">
 								<div class="staff-des">
 									<h3>Daniel Audunsson</h3>
 									<p>President</p>
 								</div>
+								<img src="<?php echo bloginfo('template_url');?>/img/daniel.png" alt="">
 							</div>
 						</div>
 						<!-- /vimle president -->
+
+						<div class="us-staff clear">
+							<?php if( have_rows('us_staff') ): ?>
+							<?php while ( have_rows('us_staff') ) : the_row(); ?>
+
+								<div class="column-4">
+									<div class="staff-img">
+										<div class="staff-des">
+											<h3><?php the_sub_field('us_staff_name'); ?></h3>
+											<p><?php the_sub_field('us_job_title'); ?></p>
+										</div>
+
+										<?php $img = get_sub_field('us_staff_picture'); // check if staff image is set?>
+									  	<?php if($img) { ?>
+									    	<img src="<?php echo $img; ?>" alt="<?php the_sub_field('us_staff_name'); ?>">
+									    <?php } else { ?>
+									    	<img src="<?php echo bloginfo('template_url');?>/img/default-staff.png" alt="<?php the_sub_field('us_staff_name'); ?>">
+									  	<?php } ?>
+
+
+									</div>
+								</div>
+
+							<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+						<!-- /us-staff -->
 
 						<div class="ph-staff clear">
 							<?php if( have_rows('staff') ): ?>
 							<?php while ( have_rows('staff') ) : the_row(); ?>
 							
 								<div class="column-4">
-									<div class="staff-img" style="background-image: url(<?php the_sub_field('staff_picture'); ?>);">
+									<div class="staff-img">
 										<div class="staff-des">
 											<h3><?php the_sub_field('staff_name'); ?></h3>
 											<p><?php the_sub_field('job_title'); ?></p>
 										</div>
+
+										<?php $img = get_sub_field('staff_picture'); // check if staff image is set?>
+									  	<?php if($img) { ?>
+									    	<img src="<?php echo $img; ?>" alt="<?php the_sub_field('staff_name'); ?>">
+									    <?php } else { ?>
+									    	<img src="<?php echo bloginfo('template_url');?>/img/default-staff.png" alt="<?php the_sub_field('staff_name'); ?>">
+									  	<?php } ?>
+
 									</div>
 								</div>
 							
 							<?php endwhile; ?>
 							<?php endif; ?>
 						</div>
+						<!-- /ph-staff -->
 
 						<div class="ch-staff clear">
-						<?php if( have_rows('ch_staff') ): ?>
-						<?php while ( have_rows('ch_staff') ) : the_row(); ?>
+							<?php if( have_rows('ch_staff') ): ?>
+							<?php while ( have_rows('ch_staff') ) : the_row(); ?>
 
-							<div class="column-4">
-								<div class="staff-img" style="background-image: url(<?php the_sub_field('ch_staff_picture'); ?>);">
-									<div class="staff-des">
-										<h3><?php the_sub_field('ch_staff_name'); ?></h3>
-										<p><?php the_sub_field('ch_job_title'); ?></p>
+								<div class="column-4">
+									<div class="staff-img">
+										<div class="staff-des">
+											<h3><?php the_sub_field('ch_staff_name'); ?></h3>
+											<p><?php the_sub_field('ch_job_title'); ?></p>
+										</div>
+
+										<?php $img = get_sub_field('ch_staff_picture'); // check if staff image is set?>
+									  	<?php if($img) { ?>
+									    	<img src="<?php echo $img; ?>" alt="<?php the_sub_field('ch_staff_name'); ?>">
+									    <?php } else { ?>
+									    	<img src="<?php echo bloginfo('template_url');?>/img/default-staff.png" alt="<?php the_sub_field('ch_staff_name'); ?>">
+									  	<?php } ?>
+
 									</div>
 								</div>
-							</div>
 
-						<?php endwhile; ?>
-						<?php endif; ?>
+							<?php endwhile; ?>
+							<?php endif; ?>
 						</div>
-
-						<div class="us-staff clear">
-						<?php if( have_rows('us_staff') ): ?>
-						<?php while ( have_rows('us_staff') ) : the_row(); ?>
-
-							<div class="column-4">
-								<div class="staff-img" style="background-image: url(<?php the_sub_field('us_staff_picture'); ?>);">
-									<div class="staff-des">
-										<h3><?php the_sub_field('us_staff_name'); ?></h3>
-										<p><?php the_sub_field('us_job_title'); ?></p>
-									</div>
-								</div>
-							</div>
-
-						<?php endwhile; ?>
-						<?php endif; ?>
-						</div>
-
+						<!-- /ch-staff -->
 
 						<div class="staff-selector clear">
+							<button data-button="staff-select" data-staff="us">United States</button>
 							<button data-button="staff-select" data-staff="ph">Philippines</button>
 							<button data-button="staff-select" data-staff="ch">China</button>
-							<button data-button="staff-select" data-staff="us">United States</button>
 						</div>
+						<!-- /staff-selector -->
 
 					</div>
 					<!-- /staff-list -->
-
-					
 					
 				</div>
 			</section>
@@ -164,11 +192,11 @@
 
 		<?php endif; ?>
 
-		<!-- contact-form-modal -->
-		<?php echo do_shortcode('[contact-form-7 id="9" title="Contact Us"]'); ?>
-		<!-- /contact-form-modal -->
+		
 
 	</main>
 	<!-- /main -->
+
+	<div class='toTop'></div>
 
 <?php get_footer(); ?>
