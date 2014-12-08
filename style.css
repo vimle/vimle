@@ -59,7 +59,7 @@ body {
 	-webkit-font-smoothing:antialiased;
 	font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
-	font:14px/1.4 normal 'Gotham', Helvetica, Arial, sans-serif;
+	font:14px/1.4 normal 'gotham-book', Helvetica, Arial, sans-serif;
 }
 
 /* clear */
@@ -375,7 +375,8 @@ i.icon-phone {
 	text-transform:uppercase;
 	font-size:30px;
 	margin:12px 0;
-	line-height:30px;;
+	line-height:30px;
+	font-family:"gotham-bold";;
 
 }
 .home-intro button {
@@ -388,16 +389,19 @@ i.icon-phone {
 	padding: 20px 0;
 	color: #fff;
 	min-height: 280px;
+	font-family: "gotham-book";
 }
 .home-career h1 {
 	text-transform: uppercase;
 	font-size: 16px;
 	line-height: 1.2em;
+	font-family: "gotham-bold";
 }
 .home-career h1 > b.bold {
 	display: block;
 	font-size: 50px;
 	line-height: .9em;
+	font-family: "gotham-bold";
 }
 .home-career .button {
 	margin:0 auto;
@@ -410,6 +414,7 @@ i.icon-phone {
 .home-career h2 {
 	margin:20px 0;
 	font-size:16px;
+	font-family:"gotham-xlight";
 }
 .home-career i {
 	font-style:normal;
@@ -474,11 +479,13 @@ i.icon-phone {
 	min-height: 440px;
 	font-size: 16px;
 	font-weight: lighter;
+	font-family: "gotham-xlight";
 }
 .home-about h1 {
 	text-transform: uppercase;
 	font-size: 30px;
 	margin: 0 0 10px;
+	font-family: "gotham-bold";
 }
 .home-about p {
 	margin-bottom:20px;
@@ -497,6 +504,7 @@ i.icon-phone {
 	font-size:30px;
 	margin:0 0 10px;
 	line-height:30px;
+	font-family:"gotham-bold";
 
 }
 .home-staff h2 {
@@ -504,6 +512,7 @@ i.icon-phone {
 	margin:0;;
 	font-weight:lighter;
 	line-height:1em;
+	font-family:"gotham-xlight";
 
 }
 .staff-list {
@@ -538,25 +547,7 @@ width: 100%;
 	border: 1px solid #E3E3E3;
 }
 
-.staff-des {
-	position: absolute;
-	background: rgba(0, 0, 0, 0.43);
-	bottom: 0;
-	color: #fff;
-	width: 100%;
-	padding: 10px;
-	-webkit-transition: all .4s ease-in-out;
-	transition: all .4s ease-in-out;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-.staff-des h3 {
-	margin: 0 0 4px;
-}
-.staff-des p {
-	margin: 0;
-}
+
 /*------------------------------------*\
     PLUGINS
 \*------------------------------------*/
@@ -606,7 +597,7 @@ width: 100%;
 	TYPOGRAPHY
 \*------------------------------------*/
 @font-face {
-	font-family:'Gotham';
+	font-family:'gotham-book';
 	src:url('fonts/gotham-book/gotham-book.eot');
 	src:url('fonts/gotham-book/gotham-book.eot?#iefix') format('embedded-opentype'),
 		url('fonts/gotham-book/gotham-book.woff') format('woff'),
@@ -617,7 +608,7 @@ width: 100%;
 }
 
 @font-face {
-	font-family:'Gotham';
+	font-family:'gotham-xlight';
 	src:url('fonts/gotham-xlight/gotham-xlight.eot');
 	src:url('fonts/gotham-xlight/gotham-xlight.eot?#iefix') format('embedded-opentype'),
 		url('fonts/gotham-xlight/gotham-xlight.woff') format('woff'),
@@ -628,7 +619,7 @@ width: 100%;
 }
 
 @font-face {
-	font-family:'Gotham';
+	font-family:'gotham-bold';
 	src:url('fonts/gotham-bold/gotham-bold.eot');
 	src:url('fonts/gotham-bold/gotham-bold.eot?#iefix') format('embedded-opentype'),
 		url('fonts/gotham-bold/gotham-bold.woff') format('woff'),
@@ -656,6 +647,7 @@ width: 100%;
 		padding: 50px 0;
 		font-size: 20px;
 		font-weight: lighter;
+		font-family: "gotham-xlight";
 	}
 	.home-intro h1 {
 		text-transform: uppercase;
@@ -711,11 +703,12 @@ width: 100%;
 	}
 	.home-career .button {
 		margin: 0 auto;
-		padding: 10px 120px;
-		font-weight: bold;
+		padding: 10px 30px;
 		display: block;
-		max-width: 200px;
 		margin-bottom: 10px;
+		max-width: 340px;
+		font-weight: bold;
+		font-family: "gotham-bold";
 	}
 	.button.btn-hallow {
 		border: 2px solid #fff;

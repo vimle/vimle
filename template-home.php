@@ -83,10 +83,6 @@
 						<!-- vimle president -->
 						<div class="vpres">
 							<div class="staff-img">
-								<div class="staff-des">
-									<h3>Daniel Audunsson</h3>
-									<p>President</p>
-								</div>
 								<img src="<?php echo bloginfo('template_url');?>/img/daniel.png" alt="">
 							</div>
 						</div>
@@ -98,10 +94,6 @@
 
 								<div class="column-4">
 									<div class="staff-img">
-										<div class="staff-des">
-											<h3><?php the_sub_field('us_staff_name'); ?></h3>
-											<p><?php the_sub_field('us_job_title'); ?></p>
-										</div>
 
 										<?php $img = get_sub_field('us_staff_picture'); // check if staff image is set?>
 									  	<?php if($img) { ?>
@@ -125,10 +117,6 @@
 							
 								<div class="column-4">
 									<div class="staff-img">
-										<div class="staff-des">
-											<h3><?php the_sub_field('staff_name'); ?></h3>
-											<p><?php the_sub_field('job_title'); ?></p>
-										</div>
 
 										<?php $img = get_sub_field('staff_picture'); // check if staff image is set?>
 									  	<?php if($img) { ?>
@@ -151,10 +139,6 @@
 
 								<div class="column-4">
 									<div class="staff-img">
-										<div class="staff-des">
-											<h3><?php the_sub_field('ch_staff_name'); ?></h3>
-											<p><?php the_sub_field('ch_job_title'); ?></p>
-										</div>
 
 										<?php $img = get_sub_field('ch_staff_picture'); // check if staff image is set?>
 									  	<?php if($img) { ?>
@@ -188,7 +172,7 @@
 
 		<?php endwhile; else: ?>
 
-				<h2><?php _e( 'Sorry, nothing to display.', 'tranx' ); ?></h2>
+				<h2><?php _e( 'Sorry, nothing to display.', 'vimle' ); ?></h2>
 
 		<?php endif; ?>
 
